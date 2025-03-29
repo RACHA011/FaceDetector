@@ -1,0 +1,178 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Face Recognition</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Additional styles for camera recognition */
+      .camera-recognition-result {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+        z-index: 100;
+        text-align: center;
+        display: none;
+      }
+      .match-found {
+        background-color: rgba(0, 255, 0, 0.7);
+        color: #000;
+      }
+      .match-not-found {
+        background-color: rgba(255, 0, 0, 0.7);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Face Recognition</h2>
+        <p class="card-description">
+          Recognize faces from video or uploaded images
+        </p>
+        
+        <div class="reference-face-section">
+          <h3 class="section-title">Reference Face</h3>
+          <p class="section-description">Upload a face image to detect in live video or images</p>
+          
+          <div id="reference-upload-container" class="upload-container reference-container">
+            <i class="fas fa-user upload-icon"></i>
+            <h3 class="upload-title">Upload Reference Face</h3>
+            <p class="upload-description">This face will be used for detection</p>
+            <button
+              type="button"
+              id="select-reference-button"
+              class="button button-outline mt-4"
+            >
+              Select Face Image
+            </button>
+            <input
+              type="file"
+              id="reference-file-input"
+              accept="image/jpeg, image/png"
+              class="hidden"
+            />
+          </div>
+          
+          <div id="reference-preview-container" class="hidden">
+            <div class="upload-container has-image reference-container">
+              <img
+                id="reference-image"
+                class="uploaded-image"
+                th:src="@{../../images/placeholder.svg}"
+                alt="Reference face"
+              />
+              <button
+                type="button"
+                id="clear-reference-button"
+                class="clear-button"
+              >
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tabs">
+          <div class="tab-list">
+            <button type="button" id="video-tab" class="tab-trigger active">
+              <i class="fas fa-video"></i>
+              Live Video
+            </button>
+            <button type="button" id="upload-tab" class="tab-trigger">
+              <i class="fas fa-upload"></i>
+              Upload Image
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div id="video-tab-content" class="tab-content active">
+          <div class="video-container">
+            <video
+              id="recognition-video"
+              class="video-feed"
+              autoplay
+              playsinline
+              muted
+            ></video>
+            <canvas id="recognise-canvas" class="tracking-canvas"></canvas>
+            <div id="recognition-video-overlay" class="video-overlay">
+              <p>Click Start Recognition to begin</p>
+            </div>
+            <div id="camera-recognition-result" class="camera-recognition-result"></div>
+          </div>
+        </div>
+        <div id="upload-tab-content" class="tab-content">
+          <!-- Target Photos Upload Section -->
+          <div id="target-upload-container" class="upload-container">
+            <i class="fas fa-cloud-upload-alt upload-icon"></i>
+            <h3 class="upload-title">Upload Target Images</h3>
+            <p class="upload-description">Upload images to detect the reference face</p>
+            <button
+              type="button"
+              id="select-target-button"
+              class="button button-outline mt-4"
+            >
+              Select Images
+            </button>
+            <input
+              type="file"
+              id="target-file-input"
+              accept="image/jpeg, image/png"
+              multiple
+              class="hidden"
+            />
+          </div>
+          
+          <!-- Target Images Preview Grid -->
+          <div id="target-images-grid" class="image-grid hidden">
+            <div id="target-images-container" class="image-grid-container">
+              <!-- Target images will be added here dynamically -->
+            </div>
+            <div class="button-group mt-4 flex justify-end">
+              <button
+                type="button"
+                id="clear-all-targets-button"
+                class="button button-outline"
+                style="margin-right: 0.5rem;"
+              >
+                Clear All
+              </button>
+              <button 
+                type="button"
+                id="detect-in-images-button" 
+                class="button button-primary"
+                disabled
+              >
+                <i class="fas fa-search" style="margin-right: 0.5rem;"></i>
+                Recognize Face
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div id="recognition-status" class="text-muted-foreground">
+          Recognition inactive
+        </div>
+        <!-- The Recognize button will be added dynamically before this button -->
+        <button
+          type="button"
+          id="recognition-toggle"
+          class="button button-primary"
+        >
+          Start Recognition
+        </button>
+      </div>
+      <script th:src="@{/js/facerecognition.js}"></script>
+    </div>
+  </body>
+</html>

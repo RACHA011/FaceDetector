@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Help - Racha Face Detection</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="help-page">
+        <div class="header">
+            <h1>Help Center</h1>
+            <p>Get assistance with Racha Face Detection features and troubleshooting</p>
+        </div>
+
+        <!-- Quick Start Guide -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Quick Start Guide</h2>
+                <p class="card-description">Begin using our facial analysis tools</p>
+            </div>
+            <div class="card-content">
+                <div class="quick-start-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Select Your Feature</h3>
+                            <p>
+                                Choose between Face Detection, Real-time Tracking, or Face Recognition from the sidebar.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Provide Input</h3>
+                            <p>
+                                Upload images for detection/recognition or enable camera for tracking.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Process Analysis</h3>
+                            <p>
+                                Click the appropriate button to initiate facial analysis.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Review Results</h3>
+                            <p>
+                                View detected faces, tracking data, or recognition matches.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Guides Accordion -->
+        <div class="help-accordion mt-4">
+            <!-- Face Detection Guide -->
+            <div class="help-accordion-item">
+                <div class="help-accordion-trigger">
+                    <div class="help-accordion-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="help-accordion-title">
+                        <h3>Face Detection</h3>
+                        <p>Identify faces in uploaded images</p>
+                    </div>
+                    <div class="help-accordion-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="help-accordion-content">
+                    <div class="feature-guide">
+                        <div class="feature-guide-section">
+                            <h4>How to Use Face Detection</h4>
+                            <ol class="numbered-list">
+                                <li>Navigate to Face Detection from the sidebar</li>
+                                <li>Upload an image (JPEG or PNG format)</li>
+                                <li>Click "Detect Faces" to process the image</li>
+                            </ol>
+                        </div>
+                        <div class="feature-guide-section">
+                            <h4>Tips for Best Results</h4>
+                            <ul class="bullet-list">
+                                <li>Use well-lit images with clear facial features</li>
+                                <li>Ensure faces are not overly rotated (front-facing works best)</li>
+                                <li>Higher resolution images yield better detection</li>
+                                <li>Avoid heavy filters or obstructions on faces</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Face Tracking Guide -->
+            <div class="help-accordion-item">
+                <div class="help-accordion-trigger">
+                    <div class="help-accordion-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="help-accordion-title">
+                        <h3>Face Tracking</h3>
+                        <p>Real-time face tracking via webcam</p>
+                    </div>
+                    <div class="help-accordion-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="help-accordion-content">
+                    <div class="feature-guide">
+                        <div class="feature-guide-section">
+                            <h4>How to Use Face Tracking</h4>
+                            <ol class="numbered-list">
+                                <li>Navigate to Face Tracking from the sidebar</li>
+                                <li>Grant camera permissions when prompted</li>
+                                <li>Click "Start Tracking" to begin</li>
+                                <li>View real-time face tracking boxes</li>
+                                <li>Click "Stop Tracking" when finished</li>
+                            </ol>
+                        </div>
+                        <div class="feature-guide-section">
+                            <h4>Optimizing Tracking</h4>
+                            <ul class="bullet-list">
+                                <li>Ensure good lighting in your environment</li>
+                                <li>Minimize rapid head movements</li>
+                                <li>Close other applications using the camera</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Face Recognition Guide -->
+            <div class="help-accordion-item">
+                <div class="help-accordion-trigger">
+                    <div class="help-accordion-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="help-accordion-title">
+                        <h3>Face Recognition</h3>
+                        <p>Match faces against reference images</p>
+                    </div>
+                    <div class="help-accordion-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="help-accordion-content">
+                    <div class="feature-guide">
+                        <div class="feature-guide-section">
+                            <h4>How to Use Face Recognition</h4>
+                            <ol class="numbered-list">
+                                <li>Navigate to Face Recognition from the sidebar</li>
+                                <li>Upload a clear reference image of the person to recognize</li>
+                                <li>Go to  live video or upload the traning image</li>
+                                <li>Click "Recognize" to find matches</li>
+                                <li>Review confidence scores for each match</li>
+                            </ol>
+                        </div>
+                        <div class="feature-guide-section">
+                            <!-- <h4>Improving Recognition Accuracy</h4>
+                            <ul class="bullet-list">
+                                <li>Use multiple reference images (different angles/lighting)</li>
+                                <li>Ensure reference and target images have similar quality</li>
+                                <li>Adjust recognition threshold in settings if needed</li>
+                                <li>Use images without heavy makeup or accessories</li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Known Issues -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Known Issues & Limitations</h2>
+                <p class="card-description">Current constraints we're working to improve</p>
+            </div>
+            <div class="card-content">
+                <div class="limitations">
+                    <div class="limitation-item">
+                        <i class="fas fa-file-image"></i>
+                        <div>
+                            <h3>HEIC Image Format</h3>
+                            <p>
+                                Currently unable to process HEIC images directly. Please convert to JPEG/PNG before uploading.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-camera"></i>
+                        <div>
+                            <h3>Real-time Recognition</h3>
+                            <p>
+                                Camera-based recognition requires reference images to be uploaded first. Direct camera recognition is not yet supported.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <div>
+                            <h3>Performance Considerations</h3>
+                            <p>
+                                Processing large images or many reference faces may slow down performance on older devices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Support -->
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Contact Support</h2>
+                <p class="card-description">Reach out for additional assistance</p>
+            </div>
+            <div class="card-content">
+                <div class="support-section">
+                    <p>
+                        For technical support, bug reports, or feature requests, please contact us directly at one of these email addresses:
+                    </p>
+
+                    <div class="contact-options">
+                        <div class="contact-option">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Primary Support</h3>
+                            <p>For general inquiries and technical support</p>
+                            <a href="mailto:rachadev032@gmail.com" class="button button-outline mt-4">
+                                <span>rachadev032@gmail.com</span>
+                            </a>
+                        </div>
+
+                        <div class="contact-option">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Alternate Contact</h3>
+                            <p>For urgent matters or backup communication</p>
+                            <a href="mailto:ratshalingwaadivhaho106@gmail.com" class="button button-outline mt-4">
+                                <span>ratshalingwaadivhaho106@gmail.com</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="support-hours mt-4">
+                        <p>
+                            <strong>Note:</strong> We only respond to inquiries sent to these email addresses.
+                        </p>
+                        <p>
+                            <strong>Response Time:</strong> Typically within 24-48 hours
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script th:src="@{/js/help.js}"></script>
+    </div>
+    
+</body>
+</html>

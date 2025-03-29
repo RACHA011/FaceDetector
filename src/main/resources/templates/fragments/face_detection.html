@@ -1,0 +1,104 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Face Detection</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div>
+        <form class="card" method="POST" th:action="@{/detect}" enctype="multipart/form-data">
+            <div class="card-header">
+                <h2 class="card-title">Face Detection</h2>
+                <p class="card-description">Detect faces using Images</p>
+            </div>
+            <div class="card-content">
+                <div id="detection-container" class="upload-container">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3 class="upload-title">Upload an image</h3>
+                    <label for="upload" class="button button-outline mt-4">Select Image</label>
+                    <input type="file" id="upload" name="file" accept="image/jpeg, image/png" class="hidden" required />
+                </div>
+                <div id="image-preview" class="hidden">
+                    <div class="upload-container has-image">
+                        <img id="update-image" class="uploaded-image" th:src="@{../images/placeholder.svg}" alt="Uploaded image" />
+                        <button type="button" id="clear-image-button" class="clear-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="button-group mt-4" style="display: flex; justify-content: flex-end">
+                        <button type="button" id="clear-button" class="button button-outline">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div id="detect-status" class="text-muted-foreground">Detection inactive</div>
+                <button type="submit" id="detect-toggle" class="button button-primary">Start Detection</button>
+            </div>
+        </form>
+    
+
+    <script th:src="@{/js/main.js}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const upload = document.getElementById('upload');
+            const updateImage = document.getElementById('update-image');
+            const detectionContainer = document.getElementById('detection-container');
+            const imagePreview = document.getElementById('image-preview');
+            const clearButton = document.getElementById('clear-button');
+            const clearImageButton = document.getElementById('clear-image-button');
+            const detectButton = document.getElementById('detect-button');
+
+            // Image upload handler
+            upload.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                
+                // Validate file type
+                if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
+                    alert('Only JPEG and PNG images are allowed.');
+                    upload.value = ''; // Clear the file input
+                    return;
+                }
+
+                // Preview image
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    updateImage.src = e.target.result;
+                    detectionContainer.style.display = 'none';
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Clear buttons functionality
+            clearButton.addEventListener('click', clearImage);
+            clearImageButton.addEventListener('click', clearImage);
+
+            function clearImage() {
+                updateImage.src = '';
+                upload.value = '';
+                detectionContainer.style.display = 'flex';
+                imagePreview.style.display = 'none';
+            }
+
+            // Detect button loading state
+            detectButton.addEventListener('click', function() {
+                if (!upload.files[0]) {
+                    alert('Please select an image first.');
+                    return;
+                }
+
+                detectButton.textContent = 'Processing...';
+                detectButton.disabled = true;
+
+                // Simulate processing delay
+                setTimeout(function() {
+                    detectButton.textContent = 'Detect Face';
+                    detectButton.disabled = false;
+                }, 2000);
+            });
+        });
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>About - Racha Face Detection</title>
+    <link th:href="@{/css/home.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <div class="about-page">
+        <div class="header">
+            <h1>About Racha Face Detection</h1>
+            <p>Comprehensive facial analysis technology powered by OpenCV and JavaCV</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Our Capabilities</h2>
+                <p class="card-description">
+                    Three powerful facial analysis functions in one platform
+                </p>
+            </div>
+            <div class="card-content">
+                <div class="about-section">
+                    <div class="about-text">
+                        <p>
+                            Racha Face Detection is a robust web application that delivers three core facial analysis functions:
+                            detection, tracking, and recognition. Built with OpenCV and JavaCV, our platform brings advanced
+                            computer vision capabilities to your browser with reliable performance.
+                        </p>
+                        <p>
+                            While we've achieved our primary goals for face processing, we're continuously working to enhance
+                            functionality and address current limitations.
+                        </p>
+                    </div>
+                    <div class="about-image">
+                        <img th:src="@{../images/face recognition.webp}" alt="Facial recognition technology" class="feature-image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Core Features</h2>
+                <p class="card-description">What our platform currently offers</p>
+            </div>
+            <div class="card-content">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Face Detection</h3>
+                        <p>
+                            Upload any image and our system will accurately detect and locate all faces present,
+                            regardless of lighting conditions or angles. Works with common image formats (JPEG, PNG).
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Real-time Face Tracking</h3>
+                        <p>
+                            Activate your camera to track facial movements in real-time. Our optimized algorithms
+                            deliver smooth tracking performance directly in your browser.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <h3>Face Recognition</h3>
+                        <p>
+                            Upload a reference image and training images to identify matches. Our system compares
+                            facial features and provides confidence scores for each recognition attempt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Technical Implementation</h2>
+                <p class="card-description">How we make it work</p>
+            </div>
+            <div class="card-content">
+                <div class="tech-section">
+                    <p>
+                        Our technology stack combines powerful computer vision libraries with efficient web technologies:
+                    </p>
+                    <ul class="tech-list">
+                        <li>
+                            <i class="fas fa-project-diagram"></i>
+                            <div>
+                                <h4>OpenCV & JavaCV Backend</h4>
+                                <p>
+                                    Leveraging LBPH, EigenFace, and FisherFace algorithms for different recognition scenarios.
+                                    Deep learning models for accurate face detection and feature extraction.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-laptop-code"></i>
+                            <div>
+                                <h4>Spring Boot Web Services</h4>
+                                <p>
+                                    Robust backend processing with efficient image handling and WebSocket communication
+                                    for real-time features.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Responsive Web Interface</h4>
+                                <p>
+                                    Clean, intuitive interface that works across devices with progressive enhancement
+                                    for core functionality.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Known Limitations</h2>
+                <p class="card-description">Current constraints we're working on</p>
+            </div>
+            <div class="card-content">
+                <div class="limitations">
+                    <div class="limitation-item">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <h3>HEIC Image Format</h3>
+                            <p>
+                                Currently unable to process HEIC images directly due to technical constraints with
+                                browser-based conversion. Please convert to JPEG/PNG before uploading.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-video-slash"></i>
+                        <div>
+                            <h3>Real-time Recognition</h3>
+                            <p>
+                                While we support real-time face tracking, recognition currently requires reference
+                                image uploads due to camera quality and performance considerations.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="limitation-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <div>
+                            <h3>Performance Factors</h3>
+                            <p>
+                                Processing speed may vary based on image size and hardware capabilities. Very large
+                                images may take longer to process.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Future Improvements</h2>
+                <p class="card-description">What's coming next</p>
+            </div>
+            <div class="card-content">
+                <div class="roadmap">
+                    <div class="roadmap-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <div>
+                            <h3>HEIC Format Support</h3>
+                            <p>
+                                Planned integration with browser-based HEIC conversion libraries to eliminate
+                                the need for manual file conversion.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h3>Enhanced Real-time Recognition</h3>
+                            <p>
+                                Development of optimized models for real-time face recognition using camera input.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <div>
+                            <h3>Batch Processing</h3>
+                            <p>
+                                Support for processing multiple images simultaneously with comprehensive results.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h2 class="card-title">Get Started</h2>
+                <p class="card-description">Begin exploring facial analysis</p>
+            </div>
+            <div class="card-content">
+                <div class="cta-section">
+                    <p>
+                        Ready to experience our face detection, tracking, and recognition capabilities?
+                        Choose a function from the sidebar or follow the quick links below:
+                    </p>
+                    <div class="button-group mt-4">
+                        <a th:href="@{/detect}" class="button button-primary">
+                            <i class="fas fa-camera"></i>
+                            <span>Face Detection</span>
+                        </a>
+                        <a th:href="@{/tracking}" class="button button-primary">
+                            <i class="fas fa-video"></i>
+                            <span>Face Tracking</span>
+                        </a>
+                        <a th:href="@{/recognize}" class="button button-primary">
+                            <i class="fas fa-user-check"></i>
+                            <span>Face Recognition</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

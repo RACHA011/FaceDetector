@@ -1,0 +1,173 @@
+/* Light Theme (Default) */
+:root {
+  --background: #ffffff; /* White */
+  --foreground: #111827; /* Gray-900 */
+  --card: #ffffff; /* White */
+  --card-foreground: #111827; /* Gray-900 */
+  --primary: #1f2937; /* Gray-800 */
+  --primary-foreground: #f9fafb; /* Gray-50 */
+  --secondary: #f3f4f6; /* Gray-100 */
+  --secondary-foreground: #111827; /* Gray-900 */
+  --muted: #f3f4f6; /* Gray-100 */
+  --muted-foreground: #6b7280; /* Gray-500 */
+  --destructive: #ef4444; /* Red-500 */
+  --destructive-foreground: #f9fafb; /* Gray-50 */
+  --border: #e5e7eb; /* Gray-200 */
+  --input: #e5e7eb; /* Gray-200 */
+  --ring: #111827; /* Gray-900 */
+  --radius: 0.5rem; /* Rounded corners */
+}
+
+/* Dark Theme (Optional) */
+.dark {
+  --background: #111827; /* Gray-900 */
+  --foreground: #f9fafb; /* Gray-50 */
+  --card: #111827; /* Gray-900 */
+  --card-foreground: #f9fafb; /* Gray-50 */
+  --primary: #f9fafb; /* Gray-50 */
+  --primary-foreground: #1f2937; /* Gray-800 */
+  --secondary: #1f2937; /* Gray-800 */
+  --secondary-foreground: #f9fafb; /* Gray-50 */
+  --muted: #1f2937; /* Gray-800 */
+  --muted-foreground: #9ca3af; /* Gray-400 */
+  --destructive: #7f1d1d; /* Red-900 */
+  --destructive-foreground: #f9fafb; /* Gray-50 */
+  --border: #374151; /* Gray-700 */
+  --input: #374151; /* Gray-700 */
+  --ring: #d1d5db; /* Gray-300 */
+}
+
+/* Utility Classes */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-card {
+  background-color: var(--card);
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.rounded-lg {
+  border-radius: var(--radius);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.block {
+  display: block;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-input {
+  border-color: var(--input);
+}
+
+.rounded-md {
+  border-radius: var(--radius);
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring:focus {
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.focus\:border-primary:focus {
+  border-color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary-foreground {
+  color: var(--primary-foreground);
+}
+
+.hover\:bg-primary\/80:hover {
+  background-color: rgba(var(--primary), 0.8);
+}
+
+.text-blue-500 {
+  color: #3b82f6; /* Blue-500 */
+}
+
+.hover\:text-blue-700:hover {
+  color: #1d4ed8; /* Blue-700 */
+}

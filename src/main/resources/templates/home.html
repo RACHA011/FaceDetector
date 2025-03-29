@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024">
+    <title>Racha Detector</title>
+    <link rel="icon" type="image/x-icon" th:href="@{/images/icon/icon.png}">
+    <link th:href="@{/css/home.css}" rel="stylesheet" />
+    <link th:href="@{/css/nav.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="top">
+          <div class="logo">
+            <i class="fas fa-fingerprint"></i>
+            <span>Face Me</span>
+          </div>
+          <i class="fas fa-bars" id="btn"></i>
+        </div>
+        <div class="user">
+          <img th:src="@{/images/image.png}" alt="user" class="user-img" />
+          <div class="user-info">
+            <p class="bold">Ratshalingwa Adivhaho</p>
+            
+          </div>
+        </div>
+        <ul>
+          <li>
+            <a th:href="@{/detect}" th:classappend="${activePage == 'detect'}">
+              <i class="fas fa-upload"></i>
+              <span class="nav-item">Face Detection</span>
+            </a>
+            <span class="tooltip">Detection</span>
+          </li>
+          <li>
+            <a
+              th:href="@{/tracking}"
+              th:classappend="${activePage == 'tracking'}"
+            >
+              <i class="fas fa-video"></i>
+              <span class="nav-item">Face Tracking</span>
+            </a>
+            <span class="tooltip">Tracking</span>
+          </li>
+          <li>
+            <a
+              th:href="@{/recognize}"
+              th:classappend="${activePage == 'recognize'}"
+            >
+              <i class="fas fa-user-check"></i>
+              <span class="nav-item">Face Recognition</span>
+            </a>
+            <span class="tooltip">Recognition</span>
+          </li>
+          <li>
+            <a
+              th:href="@{/settings}"
+              th:classappend="${activePage == 'settings'}"
+            >
+              <i class="fas fa-cog"></i>
+              <span class="nav-item">Settings</span>
+            </a>
+            <span class="tooltip">Settings</span>
+          </li>
+          <li>
+            <a th:href="@{/help}" th:classappend="${activePage == 'help'}">
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Help</span>
+            </a>
+            <span class="tooltip">Help</span>
+          </li>
+          <li>
+            <a th:href="@{/about}" th:classappend="${activePage == 'about'}">
+              <i class="fa-solid fa-info"></i>
+              <span class="nav-item">About</span>
+            </a>
+            <span class="tooltip">About</span>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="main-content">
+        <div class="content-container">
+          <div th:if="${activePage == 'tracking'}">
+            <div th:replace="~{/fragments/face_tracking :: div}"></div>
+          </div>
+          <div th:if="${activePage == 'detect'}">
+            <div th:replace="~{/fragments/face_detection :: div}"></div>
+          </div>
+          <div th:if="${activePage == 'recognize'}">
+            <div th:replace="~{/fragments/face_recognition :: div}"></div>
+          </div><div th:if="${activePage == 'result'}">
+            <div th:replace="~{/user/result :: div}"></div>
+          </div>
+          <div th:if="${activePage == 'settings'}">
+            <h1>Settings Page</h1>
+            <p>This is the settings page.</p>
+          </div>
+          <div th:if="${activePage == 'help'}">
+            <div th:replace="~{/user/help :: div}"></div>
+          </div>
+          <div th:if="${activePage == 'about'}">
+            <div th:replace="~{/user/about :: div}"></div>
+          </div>
+        </div>
+      </main>
+      <script th:src="@{/js/main.js}"></script>
+    </div>
+  </body>
+</html>
