@@ -33,8 +33,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clonehttps://github.com/RACHA011/RachaFaceDetector.git
-cd RachaFaceDetector
+git clonehttps://github.com/RACHA011/FaceDetector.git
+cd FaceDetector
 ```
 
 ### 2. Build the Project
@@ -46,7 +46,7 @@ mvn clean package
 ### 3. Run the Application
 
 ```bash
-java -jar target/RachaFaceDetector-0.0.1-SNAPSHOT.jar
+java -jar target/FaceDetector-0.0.1-SNAPSHOT.jar
 ```
 or
 ```bash
@@ -56,8 +56,8 @@ or
 ### 4. Docker Deployment (Optional)
 
 ```bash
-docker build -t rachafacedetector .
-docker run -p 8080:8080 rachafacedetector
+docker build -t facedetector .
+docker run -p 8080:8080 facedetector
 ```
 
 ## API Documentation
